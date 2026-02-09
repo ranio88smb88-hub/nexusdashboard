@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus // Dashboard</title>
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/theme.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+    <link rel="stylesheet" href="assets/css/table.css">
+    <script type="importmap">
+    {
+      "imports": {
+        "three": "https://esm.sh/three@0.178.0"
+      }
+    }
+    </script>
+</head>
+<body class="dashboard-body">
+    <div id="container"></div>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar glass">
+            <div class="sidebar-header">
+                <h1>Nexus.</h1>
+                <p>Authorized Operator</p>
+            </div>
+            
+            <nav id="sidebar-nav" class="nav-links">
+                <!-- Injected by router.js -->
+            </nav>
+
+            <div class="sidebar-footer">
+                <button onclick="logout()" class="logout-btn">Disconnect Session</button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content-area">
+            <header class="content-header glass">
+                <h2 id="module-title">Module // Initialising</h2>
+                <div id="clock">00:00:00</div>
+            </header>
+
+            <section id="module-container" class="module-view">
+                <!-- Content injected by router.js -->
+            </section>
+        </main>
+    </div>
+
+    <script type="module" src="assets/js/three-bg.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script type="module" src="assets/js/router.js"></script>
+    <script>
+        // Security check
+        if(!localStorage.getItem('nexus_session')) {
+            window.location.href = 'index.html';
+        }
+        
+        setInterval(() => {
+            document.getElementById('clock').innerText = new Date().toLocaleTimeString();
+        }, 1000);
+    </script>
+</body>
+</html>
