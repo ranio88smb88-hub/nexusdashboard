@@ -1,0 +1,112 @@
+
+@import url("https://fonts.cdnfonts.com/css/pp-neue-montreal");
+
+@font-face {
+  font-family: "PPSupplyMono";
+  src: url("https://assets.codepen.io/7558/PPSupplyMono-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --warm-off-white: #ffffff;
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.4);
+  --background-dark: #000000;
+  --font-primary: "PP Neue Montreal", sans-serif;
+  --font-secondary: "PPSupplyMono", monospace;
+  --spacing-large: 2rem;
+}
+
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--background-dark);
+  color: var(--text-primary);
+  font-family: var(--font-secondary);
+  font-size: 10px;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  position: relative;
+  z-index: 10;
+}
+
+/* Nexus Utility Classes */
+.text-hero {
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+}
+
+.font-heading {
+    font-family: "PP Neue Montreal", sans-serif;
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.animate-hero {
+    animation: slideUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 2px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.enter-btn {
+    margin-top: 2rem;
+    padding: 1rem 2.5rem;
+    background: white;
+    color: black;
+    border: none;
+    border-radius: 50px;
+    font-family: var(--font-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.enter-btn:hover { transform: scale(1.05); }
+
+.glass-form {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 3rem;
+    border-radius: 20px;
+    width: 320px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.input-group { margin-bottom: 1.5rem; }
+.input-group label { display: block; color: var(--text-secondary); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.1em; }
+.input-group input { width: 100%; background: transparent; border: none; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding: 0.5rem 0; color: white; outline: none; }
+.input-group input:focus { border-bottom-color: white; }
+
+.btn-group { display: flex; gap: 1rem; margin-top: 2rem; }
+.submit-btn { flex: 1; padding: 0.8rem; background: white; color: black; border: none; border-radius: 4px; cursor: pointer; text-transform: uppercase; font-weight: bold; }
+.cancel-btn { flex: 1; padding: 0.8rem; border: 1px solid rgba(255, 255, 255, 0.1); background: transparent; color: white; border-radius: 4px; cursor: pointer; text-transform: uppercase; }
